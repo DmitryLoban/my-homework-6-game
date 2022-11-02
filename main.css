@@ -1,0 +1,202 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+		width: 100%;
+}
+
+body{
+    height: 90%;
+    overflow: hidden;
+    counter-reset: hit;
+    position: relative;
+    background-image: url("img/screen-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -10px bottom;
+    color: #fff;
+    cursor: url("img/free-icon-goal.png"),crosshair;
+}
+
+.audio {
+	margin-top: 5px;
+	margin-left: 135px;
+}
+
+.tablo {
+	margin-top: -385px;
+	margin-left: 770px;
+}
+input:checked{
+    counter-increment: hit;
+}
+
+input:checked + label{
+    display: none;
+}
+
+.result{
+		width: 100%;
+    position: absolute;
+    /* top: 15px;
+    left: 50%; */
+		/* transform: translateX(-50%); */
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.result::after{
+    content: counter(hit);
+}
+
+.ball{
+    width: 62px;
+    height: 56px;
+    /* outline: 1px solid red; */
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: -80px;
+}
+
+.ball1 label,
+.ball4 label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/ball-1.png");
+    background-repeat: no-repeat;
+    /* background-size: 50%; */
+    cursor: url("img/free-icon-goal.png"),crosshair;
+}
+
+.ball2 label,
+.ball5 label{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url("img/ball-2.png");
+	background-repeat: no-repeat;
+	/* background-size: 50%; */
+	cursor: url("img/free-icon-goal.png"),crosshair;
+}
+
+.ball3 label,
+.ball6 label{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url("img/ball-3.png");
+	background-repeat: no-repeat;
+	/* background-size: 50%; */
+	cursor: url("img/free-icon-goal.png"),crosshair;
+}
+
+
+.ball input{
+    position: absolute;
+    left: -200px;
+}
+
+.ball1{
+    /* animation: fly1 10s 3; */
+    animation-name: fly1;
+    animation-duration: 10s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+.ball2{
+    animation: fly2 8s 3;
+    animation-delay: 3s;
+}
+.ball3{
+    animation: fly3 5s 3;
+    animation-delay: 4s;
+}
+.ball4{
+	animation: fly1 10s 3;
+	animation-name: fly1;
+	animation-duration: 6s;
+	animation-timing-function: ease-out;
+	animation-delay: 5s;
+	animation-iteration-count: infinite;
+}
+.ball5{
+	animation: fly2 6s 3;
+	animation-delay: 7s;
+}
+.ball6{
+	animation: fly4 12s 3;
+	animation-delay: 10s;
+}
+
+
+@keyframes fly1 {
+    0%{top: 85%;
+        left: 18%;}
+    25%{top: 15%;
+        left: 40%;}
+    50%{top: 70%;
+        left: 65%;
+        transform: rotate(180deg);}
+    75%{top: 20%;
+        left: 60%;
+        transform: rotate(180deg);}
+    100%{top: 60%;
+        left: 80%;}
+}
+
+@keyframes fly2 {
+	0%{top: 85%;
+			left: 10%;}
+	25%{top: 10%;
+			left: 50%;}
+	50%{top: 70%;
+			left: 30%;
+			transform: rotate(180deg);}
+	75%{top: 20%;
+			left: 70%;
+			transform: rotate(180deg);}
+	100%{top: 80%;
+			left: 70%;}
+}
+
+@keyframes fly3 {
+	0%{top: 65%;
+			left: 20%;}
+	25%{top: 40%;
+			left: 50%;}
+	50%{top: 60%;
+			left: 40%;
+			transform: rotate(180deg);}
+	75%{top: 40%;
+			left: 70%;
+			transform: rotate(180deg);}
+	100%{top: 40%;
+			left: 50%;}
+}
+
+@keyframes fly4 {
+	0%{top: 65%;
+			left: 10%;
+			transform: rotate(180deg);}}
+	25%{top: 10%;
+			left: 40%;}
+	50%{top: 70%;
+			left: 20%;
+			transform: rotate(180deg);}
+	75%{top: 30%;
+			left: 60%;
+			transform: rotate(180deg);}
+	100%{top: 70%;
+			left: 65%;}
+}
